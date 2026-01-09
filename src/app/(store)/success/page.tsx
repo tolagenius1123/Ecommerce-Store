@@ -9,6 +9,7 @@ import Link from "next/link";
 const Success = () => {
 	const searchParams = useSearchParams();
 	const orderNumber = searchParams.get("orderNumber");
+	const reference = searchParams.get("reference");
 	const clearBasket = useBasketStore((state) => state.clearBasket);
 
 	useEffect(() => {
@@ -53,6 +54,14 @@ const Success = () => {
 								<span>Order Number:</span>
 								<span className="font-mono text-sm text-green-600">
 									{orderNumber}
+								</span>
+							</p>
+						)}
+						{reference && (
+							<p className="text-gray-600 flex items-center space-x-5">
+								<span>Payment Reference:</span>
+								<span className="font-mono text-sm text-gray-800">
+									{reference}
 								</span>
 							</p>
 						)}

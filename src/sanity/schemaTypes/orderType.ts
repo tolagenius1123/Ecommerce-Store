@@ -15,21 +15,19 @@ const orderType = defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
-			name: "stripeCheckoutSessionId",
-			title: "Stripe Checkout Session ID",
+			name: "paystackReference",
+			title: "Paystack Transaction Reference",
 			type: "string",
 		}),
 		defineField({
-			name: "stripeCustomerId",
-			title: "Stripe Customer ID",
+			name: "paystackCustomerId",
+			title: "Paystack Customer ID",
 			type: "string",
-			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: "clerkUserId",
 			title: "Store User ID",
 			type: "string",
-			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: "customerName",
@@ -42,12 +40,6 @@ const orderType = defineType({
 			title: "Customer Email",
 			type: "string",
 			validation: (Rule) => Rule.required().email(),
-		}),
-		defineField({
-			name: "stripePaymentIntentId",
-			title: "Stripe Payment Intent ID",
-			type: "string",
-			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: "products",
