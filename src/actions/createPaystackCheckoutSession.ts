@@ -29,10 +29,7 @@ export async function createPaystackCheckoutSession(
 			0
 		);
 
-		const baseUrl =
-			process.env.NODE_ENV === "production"
-				? `https://${process.env.VERCEL_URL}`
-				: `${process.env.NEXT_PUBLIC_BASE_URL}`;
+		const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
 		const callbackUrl = `${baseUrl}/api/webhooks/callback`;
 
